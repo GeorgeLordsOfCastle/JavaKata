@@ -40,12 +40,42 @@ public class KarateChopTest {
     }
 
     @Test
-    public void binarySearchTest() throws Exception {
+    public void binarySearchTest_missingValue() throws Exception {
         Integer itemIndexExpected;
         Integer itemIndexActual;
         Integer item = 0;
         itemIndexActual = KarateChop.binarySearch(integerList, item);
         itemIndexExpected = null;
+        assertThat(itemIndexActual, is(itemIndexExpected));
+    }
+
+    @Test
+    public void binarySearchTest_existingValue1() throws Exception {
+        Integer itemIndexExpected;
+        Integer itemIndexActual;
+        Integer item = 4;
+        itemIndexActual = KarateChop.binarySearch(integerList, item);
+        itemIndexExpected = 1;
+        assertThat(itemIndexActual, is(itemIndexExpected));
+    }
+
+    @Test
+    public void binarySearchTest_existingValue2() throws Exception {
+        Integer itemIndexExpected;
+        Integer itemIndexActual;
+        Integer item = 12;
+        itemIndexActual = KarateChop.binarySearch(integerList, item);
+        itemIndexExpected = 5;
+        assertThat(itemIndexActual, is(itemIndexExpected));
+    }
+
+    @Test
+    public void binarySearchTest_existingValue3() throws Exception {
+        Integer itemIndexExpected;
+        Integer itemIndexActual;
+        Integer item = 21;
+        itemIndexActual = KarateChop.binarySearch(integerList, item);
+        itemIndexExpected = 11;
         assertThat(itemIndexActual, is(itemIndexExpected));
     }
 
