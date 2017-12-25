@@ -7,6 +7,9 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+
 
 public class KarateChopTest {
     Collection<Integer> integerList;
@@ -38,7 +41,12 @@ public class KarateChopTest {
 
     @Test
     public void binarySearchTest() throws Exception {
-
+        Integer itemIndexExpected;
+        Integer itemIndexActual;
+        Integer item = 0;
+        itemIndexActual = KarateChop.binarySearch(integerList, item);
+        itemIndexExpected = null;
+        assertThat(itemIndexActual, is(itemIndexExpected));
     }
 
 }
