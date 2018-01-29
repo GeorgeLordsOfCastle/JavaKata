@@ -38,4 +38,33 @@ public class BinarySearch {
         List<Integer> integers = Arrays.asList(arrayOfInteger).subList(firstIndex, lastIndex);
         return integers.toArray(new Integer[integers.size()]);
     }
+
+    public static int chop1(Integer element, Integer[] arrayOfInteger) {
+        if(arrayOfInteger.length==0) {
+            return -1;
+        }
+        int firstIndex = 0;
+        int lastIndex = arrayOfInteger.length - 1;
+
+        int middleIndex;
+        while (firstIndex + 1 < lastIndex) {
+            middleIndex = (lastIndex - firstIndex) / 2;
+            if(arrayOfInteger[middleIndex]==element) {
+                return middleIndex;
+            }
+            if(arrayOfInteger[middleIndex]>element) {
+                lastIndex = middleIndex - 1;
+            } else {
+                firstIndex = middleIndex + 1;
+            }
+        }
+
+        if(arrayOfInteger[firstIndex] == element) {
+            return firstIndex;
+        }
+        if(arrayOfInteger[lastIndex] == element) {
+            return lastIndex;
+        }
+        return -1;
+    }
 }
