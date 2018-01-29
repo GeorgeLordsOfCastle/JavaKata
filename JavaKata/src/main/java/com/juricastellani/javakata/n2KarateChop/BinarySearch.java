@@ -47,7 +47,8 @@ public class BinarySearch {
         int lastIndex = arrayOfInteger.length - 1;
 
         int middleIndex;
-        while (firstIndex + 1 < lastIndex) {
+        boolean areThereMoreThen2Elements = firstIndex + 1 < lastIndex;
+        while (areThereMoreThen2Elements) {
             middleIndex = (lastIndex - firstIndex) / 2;
             if(arrayOfInteger[middleIndex]==element) {
                 return middleIndex;
@@ -57,6 +58,7 @@ public class BinarySearch {
             } else {
                 firstIndex = middleIndex + 1;
             }
+            areThereMoreThen2Elements = firstIndex + 1 < lastIndex;
         }
 
         if(arrayOfInteger[firstIndex] == element) {
