@@ -22,6 +22,15 @@ public class BinarySearchTest {
 
     @Test
     public void searchTest() throws Exception {
-        assertThat(binarySearch.chop(3, new int[]{}), is(-1));
+        assertThat(binarySearch.chop(3, new Integer[]{}), is(-1));
+        assertThat(binarySearch.chop(3, new Integer[]{1}), is(-1));
+        assertThat(binarySearch.chop(1, new Integer[]{1}), is(0));
+        assertThat(binarySearch.chop(1, new Integer[]{1, 3, 5}), is(0));
+        assertThat(binarySearch.chop(3, new Integer[]{1, 3, 5}), is(1));
+        assertThat(binarySearch.chop(5, new Integer[]{1, 3, 5}), is(2));
+        assertThat(binarySearch.chop(0, new Integer[]{1, 3, 5}), is(-1));
+        assertThat(binarySearch.chop(2, new Integer[]{1, 3, 5}), is(-1));
+        assertThat(binarySearch.chop(4, new Integer[]{1, 3, 5}), is(-1));
+        assertThat(binarySearch.chop(6, new Integer[]{1, 3, 5}), is(-1));
     }
 }
