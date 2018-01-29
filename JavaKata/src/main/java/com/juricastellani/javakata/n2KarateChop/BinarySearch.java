@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BinarySearch {
-    public int chop(Integer element, Integer[] arrayOfInteger) {
+    public static int chop(Integer element, Integer[] arrayOfInteger) {
         List<Integer> integers = Arrays.asList(arrayOfInteger);
         if(integers.size()==0) {
             return -1;
@@ -34,7 +34,7 @@ public class BinarySearch {
     }
 
 
-    private Integer[] getSubArray(Integer[] arrayOfInteger, int firstIndex, int lastIndex) {
+    private static Integer[] getSubArray(Integer[] arrayOfInteger, int firstIndex, int lastIndex) {
         List<Integer> integers = Arrays.asList(arrayOfInteger).subList(firstIndex, lastIndex);
         return integers.toArray(new Integer[integers.size()]);
     }
