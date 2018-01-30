@@ -4,6 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class BinarySearch {
+    public BinarySearch() {
+
+    }
+
     public static int chop(Integer element, Integer[] arrayOfInteger) {
         List<Integer> integers = Arrays.asList(arrayOfInteger);
         if(integers.size()==0) {
